@@ -43,7 +43,7 @@ app.post("/users", (request, response) => {
 
   users.push(user);
 
-  return response.status(201).json(users);
+  return response.status(201).json(user);
 
 });
 
@@ -85,7 +85,7 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   todo.title = title;
   todo.deadline = new Date(deadline);
 
-  return response.json(todo);
+  return response.status(200).json(todo);
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
